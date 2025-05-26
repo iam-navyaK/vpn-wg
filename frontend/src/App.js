@@ -6,7 +6,8 @@ import './App.css';
 import 'inter-ui/inter.css';
 
 // Use your Render deployed backend URL here
-const API_BASE = 'https://vpn-wg.onrender.com/api';
+const API_BASE = process.env.REACT_APP_API_BASE;
+
 
 function App() {
   const [wgStatus, setWgStatus] = useState('');
