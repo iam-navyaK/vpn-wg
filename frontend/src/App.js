@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+  import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Button, Table, Alert, Spinner, Card, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'inter-ui/inter.css';
 
-// Use your Render deployed backend URL here
-const API_BASE = process.env.REACT_APP_API_BASE;
-
+//const API_BASE = 'http://localhost:5000/api';
+const API_BASE='https://vpn-wg.onrender.com/api';
 
 function App() {
   const [wgStatus, setWgStatus] = useState('');
@@ -127,17 +126,17 @@ function App() {
         </>
       ) : (
         <>
-          <Card className="mb-4 shadow fade-in">
-            <Card.Body>
-              <h2 className="text-center text-primary">🚀 Dive Into the WireGuard VPN Project</h2>
-              <ul className="mt-3">
-                <li>✅ Set up a secure WireGuard VPN server for private communication between devices.</li>
-                <li>🔄 Enabled IP forwarding and NAT for smooth data flow across subnets.</li>
-                <li>🔧 Managed routing and analyzed traffic to debug and optimize network performance.</li>
-                <li>🚀 Result: Created a secure, reliable VPN network for remote access and device communication.</li>
-              </ul>
-            </Card.Body>
-          </Card>
+       <Card className="mb-4 shadow fade-in">
+  <Card.Body>
+    <h2 className="text-center text-primary">🚀 Dive Into the WireGuard VPN Project</h2>
+    <ul className="mt-3">
+      <li>✅ Set up a secure WireGuard VPN server for private communication between devices.</li>
+      <li>🔄 Enabled IP forwarding and NAT for smooth data flow across subnets.</li>
+      <li>🔧 Managed routing and analyzed traffic to debug and optimize network performance.</li>
+      <li>🚀 Result: Created a secure, reliable VPN network for remote access and device communication.</li>
+    </ul>
+  </Card.Body>
+</Card>
 
           <Card className="mb-4 shadow fade-in">
             <Card.Body>
@@ -158,46 +157,48 @@ PersistentKeepalive = 25`}</pre>
             <Card.Body>
               <h5>🔍 WireGuard Server Configuration Explained</h5>
               <ul>
-                <li><strong>PrivateKey:</strong> This is the server's private key used for encryption and identification. Keep it secret.</li>
-                <li><strong>Address:</strong> The IP address assigned to the WireGuard interface (e.g., <code>10.0.0.1/24</code>).</li>
-                <li><strong>ListenPort:</strong> The port on which the server listens for incoming WireGuard connections (usually <code>51820</code>).</li>
-                <li><strong>PostUp:</strong> A command that runs after the interface is up. Commonly used to set firewall rules (e.g., iptables for NAT).</li>
-                <li><strong>PostDown:</strong> A command that runs after the interface is down. Used to remove rules set by PostUp.</li>
-                <li><strong>[Peer]:</strong> Section for each client (peer) that connects to the server.</li>
-                <ul>
-                  <li><strong>PublicKey:</strong> The public key of the client.</li>
-                  <li><strong>AllowedIPs:</strong> The IPs that the client is allowed to use (usually <code>10.0.0.2/32</code> for a single client).</li>
-                </ul>
-              </ul>
+  <li><strong>PrivateKey:</strong> This is the server's private key used for encryption and identification. Keep it secret.</li>
+  <li><strong>Address:</strong> The IP address assigned to the WireGuard interface (e.g., <code>10.0.0.1/24</code>).</li>
+  <li><strong>ListenPort:</strong> The port on which the server listens for incoming WireGuard connections (usually <code>51820</code>).</li>
+  <li><strong>PostUp:</strong> A command that runs after the interface is up. Commonly used to set firewall rules (e.g., iptables for NAT).</li>
+  <li><strong>PostDown:</strong> A command that runs after the interface is down. Used to remove rules set by PostUp.</li>
+  <li><strong>[Peer]:</strong> Section for each client (peer) that connects to the server.</li>
+  <ul>
+    <li><strong>PublicKey:</strong> The public key of the client.</li>
+    <li><strong>AllowedIPs:</strong> The IPs that the client is allowed to use (usually <code>10.0.0.2/32</code> for a single client).</li>
+  </ul>
+</ul>
+
             </Card.Body>
           </Card>
 
           <Card className="mb-4 shadow fade-in">
-            <Card.Body>
-              <h5>🧩 Setup Steps</h5>
-              <ul>
-                <li>Install WireGuard and generate keys</li>
-                <li>Configure server & clients with IP forwarding and NAT</li>
-                <li>Start the WireGuard service</li>
-                <li>Test connectivity and debug with ping & tcpdump</li>
-              </ul>
-            </Card.Body>
-          </Card>
+  <Card.Body>
+    <h5>🧩 Setup Steps</h5>
+    <ul>
+      <li>Install WireGuard and generate keys</li>
+      <li>Configure server & clients with IP forwarding and NAT</li>
+      <li>Start the WireGuard service</li>
+      <li>Test connectivity and debug with ping & tcpdump</li>
+    </ul>
+  </Card.Body>
+</Card>
+
 
           <Card className="mb-4 shadow fade-in">
-            <Card.Body>
-              <h5>
-                🟢🔴MADE BY - koya navya keerthana -{" "}
-                <a href="https://www.linkedin.com/in/navya-keerthana-k/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>{" "}
-                |{" "}
-                <a href="https://github.com/iam-navyaK" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </h5>
-            </Card.Body>
-          </Card>
+  <Card.Body>
+    <h5>
+      🟢🔴MADE BY - koya navya keerthana -{" "}
+      <a href="https://www.linkedin.com/in/navya-keerthana-k/" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>{" "}
+      |{" "}
+      <a href="https://github.com/iam-navyaK" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </h5>
+  </Card.Body>
+</Card>
 
           <div className="text-center">
             <Button variant="secondary" onClick={() => setShowDetails(false)}>Back</Button>
