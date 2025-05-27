@@ -5,8 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import 'inter-ui/inter.css';
 
-//const API_BASE = 'http://localhost:5000/api';
-const API_BASE='https://vpn-wg.onrender.com/api';
+const API_BASE = 'http://localhost:5000/api';
 
 function App() {
   const [wgStatus, setWgStatus] = useState('');
